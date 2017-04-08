@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Chart.js"></script>
+<script src = "cadastro.js"></script>
+<link rel="stylesheet" type="text/css" href="tabela.css">
+<meta charset="UTF-8"/>
+	<title>Estoque</title>
+</head>
+<body id="corpo">
+<h1 id = "titulo">Estoque</h1>
+
+<div id="tabela-container">
+<table id="tabela" border = "1">
+    <tr>
+        <td>Produtos</td>
+        <td>Estoque</td>
+        <td>Preço</td>
+    </tr>
+
+    <tr>
+        <td>Batedeira</td>
+        <td>38</td>
+        <td>251,89</td>
+
+    </tr>
+    <tr>
+        <tr>
+        <td>Fogão</td>
+        <td>42</td>
+        <td>579,00</td>
+
+    </tr>
+    <tr>
+        <tr>
+        <td>Celular</td>
+        <td>11</td>
+        <td>1499,90</td>
+
+    </tr>
+    <tr>
+        <tr>
+        <td>Geladeira</td>
+        <td>10</td>
+        <td>1879,80</td>
+
+    </tr>
+    <tr>
+        <tr>
+        <td>Secador</td>
+        <td>33</td>
+        <td>89,90</td>
+
+    </tr>
+</table>
+</div>
+<div id="canvas-container">
+<canvas id="myChart" width="400" height="400" class></canvas></div>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Batedeira", "Fogão", "Celular", "Geladeira", "Secador"],
+        datasets: [{
+            label: 'Produtos em Estoque',
+            data: [38, 42, 11, 10, 33],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+</body>
+</html>
